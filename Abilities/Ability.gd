@@ -30,46 +30,49 @@ func _init():
         "buff": buff
     }
 
-func select_target(user, target, tilemap):
-    # Implement target selection logic here
-    pass
+#func select_target21(target1, target2, tilemap):
+    # Implement target2 selection logic here
+    # pass
 
 # Executes the ability
-func execute(user, target, _tilemap):
+func execute(target1, target2, tilemap):
     for action in actions:
         match action:
             "deal_damage":
-                deal_damage(user, target)
+                deal_damage(target1, target2)
             "heal":
-                heal_user(user)
+                heal_target1(target1)
             "apply_buff":
-                apply_buff(user)
+                apply_buff(target1)
             "force_shove":
-                force_shove(user, target)
+                force_shove(target1, target2)
+            "move_to":
+                move_to(target1, tilemap)
             _:
                 print("Unknown action: ", action)
 
-# Deal damage to the target
-func deal_damage(user, target):
-    if target and "is_enemy" in target and target.is_enemy:
-        var damage_amount = effect_values.get("damage", 0)
-        target.take_damage(damage_amount)
-        print(user.name, " attacked ", target.name, " for ", damage, " damage!")
+# Deal damage to the target2
+func deal_damage(target1, target2):
+    if target2 and "is_enemy" in target2 and target2.is_enemy:
+        target2.take_damage(damage)
+        print(target1.name, " attacked ", target2.name, " for ", damage, " damage!")
 
-# Heal the user
-func heal_user(user):
-    var heal_amount = effect_values.get("heal", 0)
-    user.heal(heal_amount)
-    print(user.name, " healed for ", heal_amount, " HP!")
+# Heal the target1
+func heal_target1(target1):
+    target1.heal(heal)
+    print(target1.name, " healed for ", heal, " HP!")
 
-# Apply a buff to the user
-func apply_buff(user):
-    var buff_amount = effect_values.get("buff", 0)
-    user.apply_buff(buff_amount)
-    print(user.name, " applied a buff: ", buff_amount)
+# Apply a buff to the target1
+func apply_buff(target1):
+    target1.apply_buff(buff)
+    print(target1.name, " applied a buff: ", buff)
 
-# Shove the target
-func force_shove(user, target):
-    var shove_amount = effect_values.get("shove", 0)
-    target.shove(shove_amount)
-    print(user.name, " shoved ", target.name, " for ", shove_amount, " tiles!")
+# Shove the target2
+func force_shove(target1, target2):
+    target2.shove(shove)
+    print(target1.name, " shoved ", target2.name, " for ", shove, " tiles!")
+
+func move_to(target1, tilemap):
+    # Move the target1 to the tilemap location
+    print(target1.name, " moved to ", tilemap)
+    # Add actual movement logic here

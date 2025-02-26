@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://b417l2r40awd3"]
+
+[ext_resource type="Script" path="res://Abilities/Ability.gd" id="1_omq18"]
+
+[resource]
+script = ExtResource("1_omq18")
+name = "Recover"
+description = "A small heal to recover health."
+type = 2
+cost = 2
+abilityRange = 0
+damage = 0
+heal = 20
+shove = 0
+buff = 0
+actions = ["heal"]

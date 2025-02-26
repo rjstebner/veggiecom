@@ -1,17 +1,17 @@
-[gd_resource type="Resource" load_steps=2 format=2]
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://bjfaqpnair8fc"]
 
-[ext_resource path="res://Abilities/Ability.gd" type="Script" id=1]
+[ext_resource type="Script" path="res://Abilities/Ability.gd" id="1"]
 
 [resource]
-script = ExtResource( 1 )
+script = ExtResource("1")
 name = "Light Attack"
-description = "Deal damage to a single target."
-type = 0  # AbilityType.ATTACK
+description = "Deal a basic
+attack to a single target."
+type = 0
 cost = 1
-icon = SubResource( 1 )
-range = 10
+abilityRange = 10
 damage = 10
-actions = [ "deal_damage" ]
-
-[sub_resource type="Texture" id=1]
-resource_path = "res://Basic.png"
+heal = 0
+shove = 0
+buff = 0
+actions = ["deal_damage"]
