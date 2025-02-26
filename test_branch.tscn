@@ -35,3 +35,41 @@ position = Vector2(112, 109)
 scale = Vector2(0.15, 0.125)
 texture = ExtResource("1_2m2lv")
 script = ExtResource("4_hr0hx")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="zeroBTN" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.914
+anchor_top = 2.594
+anchor_right = 1.479
+anchor_bottom = 3.05
+offset_left = 3.44
+offset_top = -0.760002
+offset_right = 11.44
+offset_bottom = 7.23998
+
+[node name="oneBTN" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.175
+anchor_top = 2.975
+anchor_right = 0.375
+anchor_bottom = 3.175
+
+[node name="twoBTN" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.732
+anchor_top = 2.52
+anchor_right = 2.386
+anchor_bottom = 3.158
+offset_left = 2.71999
+offset_top = 3.19999
+offset_right = -4.44
+offset_bottom = -5.32001
